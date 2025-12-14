@@ -1,2 +1,2 @@
-# online-electronic-store
+# vibynotes-ntes website
 A responsive notes website for sharing and organizing study material using HTML, CSS, and JavaScript.
