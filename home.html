@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibyNotesFromSony</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div style="display:flex;align-items:center;gap:10px">
+       <div class="brand">
+        <h1>VibyNotes</h1>
+        <p class="tagline">Your Study Partner ✨</p>
+      </div>
+    </div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="home.html" onclick="scrollToSection('hero')"  class="active">Home</a></li>
+        <li><a href="blog.html" onclick="scrollToSection('notes')">Blogs</a></li>
+        <li><a href="store.html" onclick="scrollToSection('blogs')">Notes</a></li>
+        <li><a href="contact.html" onclick="scrollToSection('about')">Contact</a></li>
+        <li><a href="about.html" onclick="scrollToSection('contact')">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="overlay-bg" id="heroBg"></div>
+    <div class="hero-text">
+      <h1>Welcome to <span>VibyNotesFromSony</span></h1>
+      <p id="heroContent">From my pages to your preparation — every note has a story. 🌸</p>
+      <div>
+        <button class="cta" id="exploreBlogsBtn">Explore Blogs</button>
+        <button class="cta" onclick="window.location.href='store.html'">Explore Notes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG SECTION -->
+  <section id="blogs" class="blogs">
+    <h2>Latest Blogs — Notes, Motivation & Learning</h2>
+    <div class="blog-container" id="blogContainer"></div>
+  </section>
+
+  <!-- BLOG POPUP -->
+  <div class="overlay" id="overlay">
+    <div class="blog-popup" id="blogPopup">
+      <span class="close-btn" onclick="closeBlog()">×</span>
+      <div class="popup-cover" id="popupCover"></div>
+      <h3 class="popup-title" id="popupTitle"></h3>
+      <div class="popup-content" id="popupContent"></div>
+    </div>
+  </div>
+
+  <!-- CHAT BUTTON -->
+  <div class="chat-btn" onclick="openChat()">💬 Let’s Chat</div>
+
+  <!-- CHAT POPUP -->
+  <div class="chat-popup" id="chatPopup">
+    <div class="chat-header" id="chatGreeting">Hello!</div>
+    <textarea id="chatMessage" placeholder="Type your message..."></textarea>
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <!-- MESSAGE SENT POPUP -->
+  <div id="messageSentPopup">✅ Message Sent!</div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 VibyNotesFromSony. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibynotes</title>
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  body{
+    font-family:'Poppins',sans-serif;
+    color:#333;
+    background-image:url('https://th.bing.com/th/id/OIP.nouejoGTvKBsJgl9UqQEKwHaFE?w=235&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3');
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
+    animation:colorfade 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes colorfade{
+    0%{background-color:rgba(255,255,255,0.7);}
+    50%{background-color:rgba(230,210,255,0.7);}
+    100%{background-color:rgba(200,255,255,0.7);}
+  }
+
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 60px;
+    background:#fff;
+    border-bottom:4px solid #9c27b0;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  nav .brand{
+    font-family:"Brush Script MT",cursive;
+    font-size:28px;
+    color:#9c27b0;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+  }
+  nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:color .3s;
+  }
+  nav ul li a:hover{color:#9c27b0;}
+
+  .tagline{
+    text-align:center;
+    font-style:italic;
+    color:#fff;
+    font-weight:500;
+    margin:30px 0;
+    text-shadow:0 0 8px rgba(0,0,0,0.4);
+  }
+
+  .blog-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    max-width:1100px;
+    margin:0 auto 80px;
+    padding:0 20px;
+  }
+
+  .blog-card{
+    background:rgba(255,255,255,0.95);
+    border-radius:20px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:transform .4s,box-shadow .4s;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    backdrop-filter:blur(4px);
+  }
+
+  .blog-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  .blog-img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+  }
+
+  .blog-content{
+    padding:20px;
+    flex:1;
+  }
+
+  .blog-content h3{
+    color:#9c27b0;
+    font-size:20px;
+    margin-bottom:10px;
+  }
+
+  .blog-content p{
+    font-size:15px;
+    color:#555;
+    line-height:1.6;
+  }
+
+  .read-more{
+    display:flex;
+    justify-content:center;
+    padding:15px;
+  }
+
+  .read-more a{
+    text-decoration:none;
+    background:#9c27b0;
+    color:#fff;
+    padding:8px 22px;
+    border-radius:20px;
+    font-weight:500;
+    transition:background .3s;
+  }
+
+  .read-more a:hover{
+    background:#7b1fa2;
+  }
+
+  footer{
+    text-align:center;
+    padding:25px;
+    background:#fff;
+    border-top:2px solid #9c27b0;
+  }
+  footer .icons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-bottom:10px;
+  }
+  footer .icons a img{
+    width:26px;height:26px;filter:grayscale(1);
+    transition:filter .3s;
+  }
+  footer .icons a img:hover{filter:none;}
+</style>
+</head>
+<body>
+  <nav>
+    <div class="brand">Vibynotes</div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="blog.html" style="color:#9c27b0;font-weight:600;" class="active">Blogs</a></li>
+      <li><a href="store.html">Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="tagline">"Your Study Partner for Every Step of Learning"</div>
+
+  <section class="blog-section">
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>The Power of Consistency</h3>
+        <p>Small daily efforts shape big dreams. Learn how consistency transforms your potential into success.</p>
+      </div>
+      <div class="read-more"><a href="blog1.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>Focus: The Silent Superpower</h3>
+        <p>In a distracted world, focus is your biggest strength. Unlock techniques to sharpen your concentration.</p>
+      </div>
+      <div class="read-more"><a href="blog2.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>Turning Failures into Lessons</h3>
+        <p>Each failure hides a valuable lesson. Discover how to turn your mistakes into stepping stones to success.</p>
+      </div>
+      <div class="read-more"><a href="blog3.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://th.bing.com/th/id/OIP.HKziBO9EZLatfORiXURaKQHaD4?w=312&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" class="blog-img">
+      <div class="blog-content">
+        <h3>Discipline Over Motivation</h3>
+        <p>Motivation is temporary, but discipline is forever. Build habits that make you unstoppable.</p>
+      </div>
+      <div class="read-more"><a href="blog4.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>Value Your Time</h3>
+        <p>Your time is precious — spend it on growth, not guilt. Learn to prioritize wisely.</p>
+      </div>
+      <div class="read-more"><a href="blog5.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>Keep Growing, Keep Glowing</h3>
+        <p>Every day you learn something new, you shine brighter. Keep evolving with purpose and positivity.</p>
+      </div>
+      <div class="read-more"><a href="blog6.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>Believe in Your Journey</h3>
+        <p>Trust the process. Even slow progress is progress. Every step counts when you’re moving forward.</p>
+      </div>
+      <div class="read-more"><a href="blog7.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>Study Smart, Not Just Hard</h3>
+        <p>Efficiency beats effort when done right. Discover strategies that make learning faster and deeper.</p>
+      </div>
+      <div class="read-more"><a href="blog8.html">Read More</a></div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?w=800" class="blog-img">
+      <div class="blog-content">
+        <h3>The Magic of Gratitude</h3>
+        <p>Gratitude turns ordinary days into blessings. Understand how being thankful boosts happiness and peace.</p>
+      </div>
+      <div class="read-more"><a href="blog9.html">Read More</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+    </div>
+    <small>© 2025 Vibynotes — Your Study Partner</small>
+  </footer>
+</body>
+</html>

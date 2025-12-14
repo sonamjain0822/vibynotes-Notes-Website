@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Turning Failures into Lessons | Vibynotes</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;color:#222;min-height:100vh;background:linear-gradient(120deg,#ffebee 0%,#fff3e0 50%,#e8f5e9 100%);background-size:400% 400%;animation:bgshift 13s ease infinite}
+  @keyframes bgshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#fff;border-bottom:4px solid #ef5350;position:sticky;top:0;z-index:50}
+  .brand{font-family:"Brush Script MT",cursive;color:#ef5350;font-size:26px}
+  nav ul{display:flex;gap:20px;list-style:none}
+  nav a{text-decoration:none;color:#333;font-weight:500}
+  .tagline{text-align:center;margin:18px 0;font-style:italic;color:#444}
+  .container{max-width:900px;margin:30px auto;background:rgba(255,255,255,0.95);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+  .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .hero img{width:220px;height:140px;object-fit:cover;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+  h1{color:#ef5350;margin-bottom:6px}
+  .meta{color:#666;font-size:14px;margin-bottom:16px}
+  .lang-buttons{display:flex;gap:10px;margin:12px 0 18px}
+  .lang-buttons button{padding:8px 16px;border-radius:20px;border:none;background:#fdecea;cursor:pointer;font-weight:600}
+  .lang-buttons button.active{background:#ef5350;color:#fff}
+  .content{line-height:1.8;color:#333;font-size:16px;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  footer{text-align:center;padding:20px;margin-top:26px;background:#fff;border-top:2px solid #ef5350}
+  .icons{display:flex;justify-content:center;gap:18px;margin-bottom:8px}
+  .icons img{width:26px;height:26px;filter:grayscale(1)}
+  .icons img:hover{filter:none}
+</style>
+</head>
+<body>
+  <nav>
+    <div><div class="brand">Vibynotes</div><div style="font-size:12px;color:#666">Your Study Partner ✨</div></div>
+     <ul style="display:flex;gap:18px;list-style:none"><li><a href="home.html">Home</a></li><li><a href="blog.html" style="color:#7b1fa2;font-weight:600">Blogs</a></li><li><a href="store.html">Notes</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About</a></li></ul>
+  </nav>
+
+  <div class="tagline">"Your Study Partner for Every Step of Learning"</div>
+
+  <main class="container">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900" alt="Failure">
+      <div style="flex:1">
+        <h1>Turning Failures into Lessons</h1>
+        <div class="meta">By Vibynotes • Oct 27, 2025</div>
+
+        <div class="lang-buttons">
+          <button class="active" onclick="show('english', this)">English</button>
+          <button onclick="show('hindi', this)">हिन्दी</button>
+          <button onclick="show('hinglish', this)">Hinglish</button>
+        </div>
+      </div>
+    </div>
+
+    <article id="english" class="content">
+      <p>Failure is often dressed in disappointment — but beneath it lies feedback, a chance to learn and grow. Great students and teachers know that every setback carries a lesson if they are willing to look for it.</p>
+
+      <p>After a stumble, ask: What didn’t work? What will I change next time? How can I break this problem into smaller parts? Those questions convert mistakes into a roadmap for improvement. Keep a ‘learning log’— short notes on what went wrong and one fix to try next time.</p>
+
+      <p>Remember: courage is not the absence of failure; it’s the willingness to rise, reflect and try smarter. That’s how resilience is built.</p>
+    </article>
+
+    <article id="hindi" class="content" style="display:none">
+      <p>असफलता अक्सर निराशा के रूप में आती है — पर उसकी परतों में सीख छुपी होती है। सफल विद्यार्थी और शिक्षक जानते हैं कि हर असफलता में सुधार का अवसर होता है, बशर्ते हम उसे ढूंढने का साहस रखें।</p>
+
+      <p>गिरने के बाद पूछें: क्या गलत हुआ? अगली बार मैं क्या बदलूँगा? समस्या को छोटे हिस्सों में कैसे बाँट सकता/सकती हूँ? छोटे-छोटे नोट बनाएं — क्या हुआ और अगली बार क्या आजमाना है।</p>
+
+      <p>साहस असफलता की अनुपस्थिति नहीं है; यह उठकर सोचने और स्मार्ट तरीके से आगे बढ़ने की क्षमता है।</p>
+    </article>
+
+    <article id="hinglish" class="content" style="display:none">
+      <p>Failure ka matlab sirf loss nahi hota — usme bohot saari learning hoti hai. Successful students aur teachers woh hote hain jo failure ko analyze karte hain aur next time better plan leke aate hain.</p>
+
+      <p>Ek simple routine: har failed attempt ke baad 2-3 lines likho — kya problem thi aur ek chhota action jo agle waqt different karoge. Yeh chhote reflections aapko continuously better banayenge.</p>
+
+      <p>Courage ka matlab phir se try karna aur smarter banana hai. Isi se resilience banti hai.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="yt"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="tg"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="ig"></a>
+    </div>
+    <small>© 2025 Vibynotes — Your Study Partner</small>
+  </footer>
+
+<script>
+function show(id, btn){
+  document.querySelectorAll('#english,#hindi,#hinglish').forEach(el=>el.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.lang-buttons button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

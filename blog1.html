@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Power of Consistency | Vibynotes</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:#222;
+    min-height:100vh;
+    background:linear-gradient(120deg,#f3e5f5 0%,#e3f2fd 50%,#fff3e0 100%);
+    background-size:400% 400%;
+    animation:bgshift 12s ease infinite;
+  }
+  @keyframes bgshift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 28px;background:#fff;border-bottom:4px solid #9c27b0;position:sticky;top:0;z-index:50;
+  }
+  .brand{font-family:"Brush Script MT",cursive;color:#9c27b0;font-size:26px}
+  nav ul{display:flex;gap:20px;list-style:none}
+  nav a{text-decoration:none;color:#333;font-weight:500}
+  .tagline{text-align:center;margin:18px 0;font-style:italic;color:#444}
+  .container{max-width:900px;margin:30px auto;background:rgba(255,255,255,0.95);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+  .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .hero img{width:220px;height:140px;object-fit:cover;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+  h1{color:#9c27b0;margin-bottom:6px}
+  .meta{color:#666;font-size:14px;margin-bottom:16px}
+  .lang-buttons{display:flex;gap:10px;margin:12px 0 18px}
+  .lang-buttons button{
+    padding:8px 16px;border-radius:20px;border:none;background:#f0e7f7;cursor:pointer;font-weight:600
+  }
+  .lang-buttons button.active{background:#9c27b0;color:#fff}
+  .content{line-height:1.8;color:#333;font-size:16px;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  footer{text-align:center;padding:20px;margin-top:26px;background:#fff;border-top:2px solid #9c27b0}
+  .icons{display:flex;justify-content:center;gap:18px;margin-bottom:8px}
+  .icons img{width:26px;height:26px;filter:grayscale(1)}
+  .icons img:hover{filter:none}
+  @media(max-width:600px){.hero img{width:100%;height:180px}}
+</style>
+</head>
+<body>
+  <nav>
+    <div>
+      <div class="brand">Vibynotes</div>
+      <div style="font-size:12px;color:#666">Your Study Partner ✨</div>
+    </div>
+    <ul style="display:flex;gap:18px;list-style:none"><li><a href="home.html">Home</a></li><li><a href="blog.html" style="color:#7b1fa2;font-weight:600">Blogs</a></li><li><a href="store.html">Notes</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About</a></li></ul>
+  </nav>
+
+  <div class="tagline">"Your Study Partner for Every Step of Learning"</div>
+
+  <main class="container">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900" alt="Consistency">
+      <div style="flex:1">
+        <h1>The Power of Consistency</h1>
+        <div class="meta">By Vibynotes • Oct 27, 2025</div>
+
+        <div class="lang-buttons">
+          <button class="active" onclick="show('english', this)">English</button>
+          <button onclick="show('hindi', this)">हिन्दी</button>
+          <button onclick="show('hinglish', this)">Hinglish</button>
+        </div>
+      </div>
+    </div>
+
+    <article id="english" class="content">
+      <p><strong>Consistency</strong> is the quiet engine behind every meaningful achievement. It’s not about perfection; it’s about showing up — day after day — even when motivation dips or the results are slow to appear. For a student, that might mean reading a small chapter every evening. For a teacher, it might mean delivering one extra minute of attention to a struggling student. The compound effect of these small, steady actions creates long-term transformation.</p>
+
+      <p>When you choose consistency, you choose structure. You trade the drama of sporadic effort for the peace of steady progress. Break big goals into tiny habits: a page a day, a five-minute revision, an extra practice question. Over weeks and months, these tiny actions stack into confidence, skill, and results.</p>
+
+      <p>Finally, remember that consistency is compassionate — it allows for rest, recovery and tiny course corrections. It’s not rigid; it’s resilient. Keep showing up. Growth will follow.</p>
+    </article>
+
+    <article id="hindi" class="content" style="display:none">
+      <p><strong>निरंतरता</strong> हर बड़ी उपलब्धि के पीछे ख़ामोश शक्ति है। इसका मतलब परफेक्शन नहीं, बल्कि बार-बार हाज़िर होना है — उस समय भी जब मन नहीं करता। छात्र के लिए इसका अर्थ हो सकता है हर रात एक छोटा सा अध्याय पढ़ना। शिक्षक के लिए यह किसी कमजोर विद्यार्थी को एक अतिरिक्त मिनट देना हो सकता है। ये छोटे, लगातार कदम मिलकर बड़े बदलाव लाते हैं।</p>
+
+      <p>जब आप निरंतरता चुनते हैं, तो आप अस्थिर प्रयासों की जगह स्थिर प्रगति चुनते हैं। बड़े लक्ष्यों को छोटे-छोटे आदतों में बाँटें: रोज़ एक पेज, ५ मिनट रिवीजन, एक अतिरिक्त प्रश्न हल करना। हफ्तों और महीनों में ये आदतें विश्वास और परिणाम देती हैं।</p>
+
+      <p>निरंतरता सहानुभूतिपूर्ण भी होती है — यह आराम और सुधार के लिए जगह छोड़ती है। कड़ी मेहनत और धैर्य से लगातार जुड़ें; सफलता अपने आप बन जाएगी।</p>
+    </article>
+
+    <article id="hinglish" class="content" style="display:none">
+      <p><strong>Consistency</strong matlab roz chhoti chhoti cheezen — jab aap roz thoda thoda karte ho, to time ke saath wo badi cheez ban jaati hai. Motivation har roz nahi rehta, lekin habit reh jaati hai. Student ke liye everyday 20 minute padhai, teacher ke liye har class me thoda extra attention — ye sab aggregate hokar aapko aage le jaata hai.</p>
+
+      <p>Consistency ka matlab rigid hona nahi, balki smart hona hai. Goals ko tiny tasks me tod do: ek page, ek short revision, 10 questions. Fir dekho — weeks ke baad confidence aur results aane lagte hain.</p>
+
+      <p>Bas ek rule — show up. Thoda rest lo jab zaroori ho, lekin regular return karo. Progress guaranteed hai.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="yt"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="tg"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="ig"></a>
+    </div>
+    <small>© 2025 Vibynotes — Your Study Partner</small>
+  </footer>
+
+<script>
+function show(id, btn){
+  document.querySelectorAll('#english,#hindi,#hinglish').forEach(el=>el.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.lang-buttons button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

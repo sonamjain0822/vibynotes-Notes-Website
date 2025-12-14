@@ -1,0 +1,361 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibyNotes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #e0f0ff;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      border-top: 4px solid #3498db;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 40px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+    }
+    .navbar .brand h1 {
+      margin: 0;
+      color: #3498db;
+      font-family: 'Dancing Script', cursive;
+    }
+    .navbar .tagline {
+      font-size: 1rem;
+      margin: 0;
+      color: #555;
+      font-style: italic;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 4px;
+    }
+
+    /* Logged in user */
+    #userDisplay {
+      font-weight: 600;
+      color: #217dbb;
+      margin-left: 20px;
+    }
+
+    /* Hero Section */
+    .contact-hero {
+      background: linear-gradient(to right, #cce6ff, #e0f0ff);
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .contact-hero h2 {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-bottom: 10px;
+    }
+    .contact-hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Contact Form Card */
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      padding: 50px 20px;
+    }
+    .contact-card {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    .contact-card h3 {
+      color: #3498db;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .contact-card label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    .contact-card input,
+    .contact-card select,
+    .contact-card textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .contact-card button {
+      width: 100%;
+      padding: 12px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-card button:hover {
+      background: #217dbb;
+    }
+
+    /* Footer */
+    .footer {
+      background: #fff;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 2px solid #3498db;
+      margin-top: 50px;
+    }
+    .social-icons img {
+      width: 30px;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Chat Button */
+    .chat-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .chat-card {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 25px;
+      width: 300px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      z-index: 1000;
+      flex-direction: column;
+    }
+    .chat-card-header {
+      background: #3498db;
+      color: #fff;
+      padding: 12px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      font-weight: 600;
+    }
+    .chat-card-body {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .chat-card-body input {
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .chat-card-body button {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background: #3498db;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Popup Message Box */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 25px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      z-index: 2000;
+      font-weight: 600;
+      color: #217dbb;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translate(-50%, -45%);}
+      to {opacity: 1; transform: translate(-50%, -50%);}
+    }
+
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; padding: 12px; }
+      nav a { margin: 8px; }
+      .contact-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="brand">
+      <h1>VibyNotes</h1>
+      <p class="tagline">Your Study Partner ✨</p>
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="blog.html">Blogs</a>
+      <a href="store.html">Notes</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+    <span id="userDisplay"></span>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <h2>Get in Touch 📬</h2>
+    <p>We’d love to hear from you! Fill in your details below.</p>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-section">
+    <div class="contact-card">
+      <h3>Contact Form</h3>
+      <form id="contactForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your number" required>
+
+        <label for="role">I am a</label>
+        <select id="role" required>
+          <option value="">Select</option>
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="parent">Parent</option>
+          <option value="none">None</option>
+        </select>
+
+        <label for="position">Position / Class</label>
+        <input type="text" id="position" placeholder="Enter your class or position" required>
+
+        <label for="message">Message / Query</label>
+        <textarea id="message" rows="4" placeholder="Write your query here..." required></textarea>
+
+        <button type="submit" href="dashboard.html">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Popup -->
+  <div class="popup" id="popupBox"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/018/930/569/original/youtube-logo-youtube-icon-transparent-free-png.png" alt="YouTube"></a>
+      <a href="#"><img src="https://vectorified.com/images/telegram-icon-18.png" alt="Telegram"></a>
+      <a href="#"><img src="http://pluspng.com/img-png/instagram-icon-png-instagram-icon-1600.png" alt="Instagram"></a>
+    </div>
+    <p>© 2025 VibyNotes | All Rights Reserved</p>
+  </footer>
+
+  <!-- Chat -->
+  <button class="chat-btn" id="chatBtn">Let's Chat 💬</button>
+  <div class="chat-card" id="chatCard">
+    <div class="chat-card-header" id="chatGreeting">Hello!</div>
+    <div class="chat-card-body">
+      <input type="text" placeholder="Type your message..." id="chatInput">
+      <button id="sendChat">Send</button>
+    </div>
+  </div>
+
+  <script>
+  // ⏰ Greeting
+  const hour = new Date().getHours();
+  const chatGreeting = document.getElementById('chatGreeting');
+  chatGreeting.innerText =
+    hour < 12 ? 'Good Morning ☀️ How can I help you?' :
+    hour < 18 ? 'Good Afternoon 🌤️ How can I help you?' :
+    'Good Evening 🌙 How can I help you?';
+
+  const chatBtn = document.getElementById('chatBtn');
+  const chatCard = document.getElementById('chatCard');
+  const chatInput = document.getElementById('chatInput');
+  const sendChat = document.getElementById('sendChat');
+  const popupBox = document.getElementById('popupBox');
+
+  chatBtn.addEventListener('click', () => {
+    chatCard.style.display =
+      chatCard.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  function showPopup(message) {
+    popupBox.innerText = message;
+    popupBox.style.display = "block";
+
+    setTimeout(() => {
+      popupBox.style.display = "none";
+    }, 2000);
+  }
+
+  sendChat.addEventListener('click', () => {
+    if (chatInput.value.trim() === '') return;
+    showPopup('✅ Message Sent Successfully!');
+    chatInput.value = '';
+    chatCard.style.display = 'none';
+  });
+
+  // ✅ Contact Form Submit
+  document.getElementById("contactForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    showPopup("🎉 Thank you! Redirecting to dashboard...");
+
+    setTimeout(() => {
+      window.location.href = "dashboard.html";
+    }, 2000);
+
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>

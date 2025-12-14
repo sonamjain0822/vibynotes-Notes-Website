@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Magic of Gratitude | Vibynotes</title>
+
+<style>
+  /* Reset & Base */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:#222;
+    min-height:100vh;
+    background:linear-gradient(120deg,#fff3e0 0%,#f3e5f5 50%,#e8f5e9 100%);
+    background-size:400% 400%;
+    animation:bgshift 12s ease infinite;
+  }
+  @keyframes bgshift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  /* Navbar */
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 40px;
+    background:#fff;
+    border-bottom:4px solid #8e24aa;
+    position:sticky;
+    top:0;
+    z-index:50;
+    box-shadow:0 4px 15px rgba(0,0,0,0.06);
+  }
+  .brand{
+    font-family:"Brush Script MT",cursive;
+    color:#8e24aa;
+    font-size:28px;
+  }
+  .subtext{
+    font-size:12px;
+    color:#777;
+    margin-top:-2px;
+  }
+  nav ul{
+    display:flex;
+    gap:24px;
+    list-style:none;
+  }
+  nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    font-size:15px;
+    transition:0.3s;
+  }
+  nav a:hover,
+  nav a.active{
+    color:#8e24aa;
+    border-bottom:2px solid #8e24aa;
+    padding-bottom:4px;
+  }
+
+  /* Tagline */
+  .tagline{
+    text-align:center;
+    margin:22px 0;
+    font-style:italic;
+    color:#444;
+    font-size:15px;
+  }
+
+  /* Container */
+  .container{
+    max-width:900px;
+    margin:30px auto;
+    background:rgba(255,255,255,0.96);
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+    transition:transform .3s ease;
+  }
+  .container:hover{transform:translateY(-4px);}
+
+  /* Hero */
+  .hero{
+    display:flex;
+    gap:24px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .hero img{
+    width:250px;
+    height:160px;
+    object-fit:cover;
+    border-radius:14px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Headings */
+  h1{
+    color:#8e24aa;
+    margin-bottom:6px;
+    font-size:28px;
+  }
+  .meta{
+    color:#666;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+
+  /* Language Buttons */
+  .lang-buttons{
+    display:flex;
+    gap:10px;
+    margin:12px 0 20px;
+    flex-wrap:wrap;
+  }
+  .lang-buttons button{
+    padding:8px 18px;
+    border-radius:25px;
+    border:1px solid #8e24aa;
+    background:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+    color:#8e24aa;
+  }
+  .lang-buttons button:hover{
+    background:#f3e5f5;
+  }
+  .lang-buttons button.active{
+    background:#8e24aa;
+    color:#fff;
+    box-shadow:0 3px 8px rgba(142,36,170,0.3);
+  }
+
+  /* Content */
+  .content{
+    line-height:1.8;
+    color:#333;
+    font-size:16px;
+    animation:fade .5s ease;
+  }
+  @keyframes fade{
+    from{opacity:0;transform:translateY(6px)}
+    to{opacity:1;transform:none}
+  }
+  .content p{
+    margin-bottom:16px;
+  }
+
+  /* Footer */
+  footer{
+    text-align:center;
+    padding:20px;
+    margin-top:35px;
+    background:#fff;
+    border-top:2px solid #8e24aa;
+  }
+  .icons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-bottom:10px;
+  }
+  .icons img{
+    width:26px;
+    height:26px;
+    filter:grayscale(1);
+    transition:0.3s;
+  }
+  .icons img:hover{
+    filter:none;
+    transform:scale(1.1);
+  }
+</style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div>
+      <div class="brand">Vibynotes</div>
+      <div class="subtext">Your Study Partner ✨</div>
+    </div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="blog.html" class="active">Blogs</a></li>
+      <li><a href="store.html">Notes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Tagline -->
+  <div class="tagline">"Your Study Partner for Every Step of Learning"</div>
+
+  <!-- Main Container -->
+  <main class="container">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?w=900" alt="Gratitude">
+      <div style="flex:1">
+        <h1>The Magic of Gratitude</h1>
+        <div class="meta">By Vibynotes • Oct 27, 2025</div>
+
+        <div class="lang-buttons">
+          <button class="active" onclick="show('english', this)">English</button>
+          <button onclick="show('hindi', this)">हिन्दी</button>
+          <button onclick="show('hinglish', this)">Hinglish</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <article id="english" class="content">
+      <p>Gratitude is a quiet practice that shifts attention from lack to abundance. For students, gratitude creates a calm mind that learns better. For teachers, gratitude fuels patience and connection in the classroom.</p>
+
+      <p>Try a simple nightly habit: write down three things you’re grateful for that day — even small ones. Over weeks, this practice rewires perspective, reduces anxiety and increases motivation. Gratitude helps you see progress you might otherwise overlook.</p>
+
+      <p>It’s not about ignoring problems — it’s about balancing them with recognition of what’s working. That balance creates resilience and joy.</p>
+    </article>
+
+    <!-- Hindi -->
+    <article id="hindi" class="content" style="display:none">
+      <p>कृतज्ञता एक शांत अभ्यास है जो ध्यान को कमी से समृद्धि की ओर मोड़ती है। छात्रों के लिए कृतज्ञता मन को शांत करती है जिससे बेहतर सीखने में मदद मिलती है। शिक्षकों के लिए यह कक्षा में धैर्य और संबंध बनाने का स्रोत है।</p>
+
+      <p>एक सरल आदत अपनाइए: हर रात तीन चीजें लिखें जिनके लिए आप आभारी हैं। हफ्तों में यह अभ्यास दृष्टिकोण को बदल देता है, चिंता घटाता है और प्रेरणा बढ़ाता है।</p>
+
+      <p>समस्याओं को अनदेखा करना नहीं है — बल्कि कार्यशील चीजों को पहचानना है। यही संतुलन सहनशीलता और खुशहाली लाता है।</p>
+    </article>
+
+    <!-- Hinglish -->
+    <article id="hinglish" class="content" style="display:none">
+      <p>Gratitude ek simple practice hai jo negativity ko balance karta hai. Students ke liye gratitude se mind calm hota hai aur learning better hoti hai. Teachers ke liye ye patience badhata hai.</p>
+
+      <p>Try karo: raat ko 3 chhoti chhizein likho jin ke liye aap thankful ho. 2-3 hafton me aapko perspective me positive change dikhega aur anxiety kam hogi.</p>
+
+      <p>Problems ko ignore karna nahi — par jo acha ho raha hai usko bhi notice karo. Balance se hi resilience banta hai.</p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+    </div>
+    <small>© 2025 Vibynotes — Your Study Partner</small>
+  </footer>
+
+<script>
+function show(id, btn){
+  document.querySelectorAll('#english,#hindi,#hinglish').forEach(el=>el.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.lang-buttons button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

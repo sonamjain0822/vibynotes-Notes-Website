@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibynotes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* General Style */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e3e6ff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+      .navbar {
+        border-top: 4px solid #7d2ae8;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 40px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        height: 65px;
+      }
+      .navbar .brand h1 {
+        margin: 0;
+        color: purple;
+        font-family: 'Dancing Script', cursive;
+      }
+      .navbar .tagline {
+        font-size: 1rem;
+        margin: 0;
+        color: #555;
+        font-style: italic;
+      }
+      nav a {
+        text-decoration: none;
+        color: #333;
+        margin-left: 25px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      nav a:hover,
+      nav a.active {
+        color: #7d2ae8;
+        border-bottom: 2px solid #7d2ae8;
+        padding-bottom: 4px;
+      }
+    /* About Section */
+    .about-container {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(255,255,255,0.85);
+      margin: 60px auto;
+      max-width: 900px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .about-container h1 {
+      font-size: 2.8rem;
+      color: #5b4bff;
+      margin-bottom: 10px;
+    }
+
+    .about-container .subtagline {
+      font-style: italic;
+      color: #777;
+      margin-bottom: 25px;
+      font-size: 1.2rem;
+    }
+
+    .about-frame {
+      border-left: 6px solid #6c5ce7;
+      padding-left: 20px;
+      margin-top: 30px;
+      background: #f3f3ff;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .about-frame p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 2px solid #b3a4ff;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer .icons a {
+      color: #5b4bff;
+      font-size: 1.5rem;
+      margin: 0 15px;
+      transition: transform 0.3s;
+    }
+
+    footer .icons a:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+      <div class="brand">
+        <h1>VibyNotes</h1>
+        <p class="tagline">Your Study Partner ✨</p>
+      </div>
+      <nav>
+        <a href="home.html" >Home</a>
+        <a href="blog.html" >Blogs</a>
+        <a href="store.html" >Notes</a>
+        <a href="contact.html" >Contact</a>
+        <a href="about.html" class="active">About</a>
+
+      </nav>
+    </header>
+
+  <!-- About Section -->
+  <div class="about-container">
+    <h1>About Vibynotes ~</h1>
+    <p class="subtagline">"Where learning meets creativity"</p>
+
+    <div class="about-frame">
+      <p>
+        Welcome to <strong>Vibynotes</strong> — your digital space for simplified learning, creative notes,
+        and inspired reading. We believe that education should never feel heavy; it should flow
+        smoothly like a conversation between curiosity and knowledge.  
+        <br><br>
+        Here, you’ll find carefully curated handwritten notes, ebooks, and blogs crafted for
+        students and learners who value both <em>clarity</em> and <em>creativity</em>.  
+        Our mission is to make study materials engaging, aesthetic, and easily accessible to everyone.
+        <br><br>
+        Dive in — learn, explore, and let every page inspire a new vibe of learning ✨
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="icons">
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

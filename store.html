@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>VibyNotes Store | Your Study Partner</title>
+<style>
+  :root{
+    --accent: #6a11cb;
+    --accent-2: #a4508b;
+    --glass: rgba(255,255,255,0.85);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+  body{
+    min-height:100vh;
+    color:#222;
+    background:linear-gradient(-45deg,#a8c0ff,#fbc2eb,#fad0c4,#a1c4fd);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
+  }
+  @keyframes gradient{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 40px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);
+    border-top:4px solid var(--accent);
+    box-shadow:0 6px 18px rgba(0,0,0,0.08)
+  }
+  .logo{font-family:'Brush Script MT',cursive;color:var(--accent);font-size:1.7rem}
+  .tagline{font-size:0.95rem;color:#555;margin-left:8px;font-style:italic}
+  .nav-links{display:flex;gap:22px;align-items:center}
+  .nav-links a{text-decoration:none;color:#333;font-weight:600;transition:color .2s}
+  .nav-links a.active{color:var(--accent)}
+  .nav-links a:hover{color:var(--accent)}
+
+  /* HEADER */
+  header{padding:56px 20px 18px;text-align:center}
+  header h1{font-size:2.4rem;color:var(--accent);margin-bottom:6px}
+  header p{color:#444;font-size:1.05rem;font-style:italic}
+
+  /* Controls */
+  .controls{
+    max-width:1200px;margin:8px auto 0;padding:0 20px 18px;
+    display:flex;gap:12px;align-items:center;justify-content:flex-end;
+  }
+  .filter-select{
+    padding:10px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);
+    background:#fff;box-shadow:0 3px 10px rgba(0,0,0,0.04);
+    font-weight:600;color:#555;
+  }
+
+  /* GRID */
+  .store{
+    max-width:1200px;margin:22px auto;padding:0 20px 80px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;
+  }
+  .card{
+    background:var(--glass);border-radius:14px;padding:14px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.08);
+    display:flex;flex-direction:column;align-items:stretch;
+    transition:transform .28s,box-shadow .28s;
+    overflow:hidden;
+  }
+  .card:hover{transform:translateY(-8px);box-shadow:0 12px 28px rgba(0,0,0,0.12)}
+  .thumb{width:100%;height:180px;border-radius:10px;overflow:hidden;display:block;background:#fff;margin-bottom:12px}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .title{color:var(--accent);font-size:1.05rem;margin-bottom:8px}
+  .desc{color:#555;font-size:0.95rem;flex:1}
+  .card-row{display:flex;gap:10px;justify-content:center;margin-top:14px}
+  .btn{padding:9px 14px;border-radius:999px;border:none;cursor:pointer;font-weight:600}
+  .btn.view{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#fff;box-shadow:0 6px 16px rgba(106,17,203,0.18)}
+  .btn.price{background:#eee;color:#444;}
+
+  /* POPUP (PDF preview) */
+  .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;z-index:120}
+  .overlay.show{display:flex}
+  .preview{
+    width:92%;max-width:900px;background:rgba(255,255,255,0.95);
+    border-radius:14px;padding:18px;box-shadow:0 18px 40px rgba(0,0,0,0.35);
+    position:relative;transform-origin:center;animation:zoomIn .28s ease;
+  }
+  @keyframes zoomIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+  .preview .head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .preview h3{color:var(--accent);margin:0;font-size:1.1rem}
+  .close{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:10px;cursor:pointer}
+  .pdf-frame{width:100%;height:520px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);overflow:hidden;background:#fff}
+  .pdf-frame iframe{width:100%;height:100%;border:0}
+
+  .sample-note{
+    position:absolute;right:36px;bottom:34px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0.9));
+    padding:10px 12px;border-radius:10px;color:var(--accent);font-weight:700;box-shadow:0 6px 14px rgba(0,0,0,0.08)
+  }
+
+  footer{padding:28px 20px;text-align:center;margin-top:18px;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);border-top:3px solid var(--accent)}
+  footer small{color:#555}
+</style>
+</head>
+<body>
+
+  <nav>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="logo">VibyNotes</div>
+      <div class="tagline">Your Study Partner ✨</div>
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="blog.html">Blogs</a>
+      <a href="store.html" class="active">Notes</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Explore Premium Study Notes — 30 Samples</h1>
+    <p>Preview pages (sample only). Purchase full version to unlock complete notes.</p>
+  </header>
+
+  <div class="controls">
+    <select id="category" class="filter-select">
+      <option value="all">All Categories</option>
+      <option value="Programming">Programming</option>
+      <option value="Web">Web</option>
+      <option value="Exam">Exam</option>
+    </select>
+  </div>
+
+  <main class="store" id="store"></main>
+
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <div class="preview" role="dialog" aria-modal="true">
+      <div class="head">
+        <h3 id="previewTitle">Preview</h3>
+        <div><button class="close" id="closeBtn">Close</button></div>
+      </div>
+      <div class="pdf-frame" id="pdfFrameWrap"></div>
+      <div class="sample-note">Sample preview: pages 1–2 only</div>
+    </div>
+  </div>
+
+  <footer>
+    <small>© 2025 VibyNotes — Your Study Partner</small>
+  </footer>
+
+<script>
+const notes = [
+  // (same 30 notes you already had)
+  { title:'C Programming Basics', desc:'Learn C fundamentals', category:'Programming', price:'₹49', pdf:'https://www.tutorialspoint.com/cprogramming/cprogramming_tutorial.pdf' },
+  { title:'Advanced C Concepts', desc:'Pointers & structs', category:'Programming', price:'₹69', pdf:'https://www.tutorialspoint.com/c/pdf/c_tutorial.pdf' },
+  { title:'Java for Beginners', desc:'OOP basics & examples', category:'Programming', price:'₹79', pdf:'https://www.tutorialspoint.com/java/pdf/java_tutorial.pdf' },
+  { title:'OOP in Java', desc:'Inheritance, polymorphism', category:'Programming', price:'₹89', pdf:'https://www.cs.utexas.edu/~scottm/cs307/handouts/OOPbasics.pdf' },
+  { title:'Python Essentials', desc:'Core Python concepts', category:'Programming', price:'₹59', pdf:'https://www.tutorialspoint.com/python/pdf/python_tutorial.pdf' },
+  { title:'DSA in Java', desc:'Arrays, stacks, queues', category:'Programming', price:'₹99', pdf:'https://www.tutorialspoint.com/data_structures_algorithms/pdf/data_structures_algorithms.pdf' },
+  { title:'C++ Quick Notes', desc:'Syntax & STL shortcuts', category:'Programming', price:'₹75', pdf:'https://www.tutorialspoint.com/cpp/pdf/cpp_tutorial.pdf' },
+  { title:'Algorithms Handbook', desc:'Classic algorithms explained', category:'Programming', price:'₹89', pdf:'https://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture25.pdf' },
+  { title:'Operating Systems', desc:'Processes & memory', category:'Programming', price:'₹79', pdf:'https://www.tutorialspoint.com/operating_system/pdf/operating_system_tutorial.pdf' },
+  { title:'Computer Networks', desc:'Basics & protocols', category:'Programming', price:'₹89', pdf:'https://www.tutorialspoint.com/computer_networking/pdf/computer_networking_tutorial.pdf' },
+
+  // Web (10)
+  { title:'HTML Basics', desc:'Tags & structure', category:'Web', price:'₹49', pdf:'https://www.tutorialspoint.com/html/pdf/html_tutorial.pdf' },
+  { title:'CSS Styling', desc:'Selectors & layout', category:'Web', price:'₹59', pdf:'https://www.tutorialspoint.com/css/pdf/css_tutorial.pdf' },
+  { title:'JavaScript Essentials', desc:'DOM & syntax', category:'Web', price:'₹69', pdf:'https://www.tutorialspoint.com/javascript/pdf/javascript_tutorial.pdf' },
+  { title:'React Quick Notes', desc:'Components & state', category:'Web', price:'₹89', pdf:'https://reactjs.org/docs/getting-started.html' },
+  { title:'Node.js Guide', desc:'Server side JS', category:'Web', price:'₹79', pdf:'https://www.tutorialspoint.com/nodejs/pdf/nodejs_tutorial.pdf' },
+  { title:'Express.js Notes', desc:'Routing & APIs', category:'Web', price:'₹89', pdf:'https://expressjs.com/en/4x/api.html' },
+  { title:'MongoDB Guide', desc:'NoSQL fundamentals', category:'Web', price:'₹79', pdf:'https://www.tutorialspoint.com/mongodb/pdf/mongodb_tutorial.pdf' },
+  { title:'Git & GitHub', desc:'Version control basics', category:'Web', price:'₹59', pdf:'https://www.tutorialspoint.com/git/pdf/git_tutorial.pdf' },
+  { title:'Bootstrap Notes', desc:'Grid & components', category:'Web', price:'₹69', pdf:'https://www.tutorialspoint.com/bootstrap/pdf/bootstrap_tutorial.pdf' },
+  { title:'Full-Stack Overview', desc:'Workflow & tips', category:'Web', price:'₹99', pdf:'https://www.tutorialspoint.com/web_development/pdf/web_development_overview.pdf' },
+
+  // Exam (10)
+  { title:'IPU LEET Notes', desc:'Important quick topics', category:'Exam', price:'₹49', pdf:'https://www.tutorialspoint.com/placement_training/pdf/placement_training_tutorial.pdf' },
+  { title:'Aptitude Tricks', desc:'Shortcuts & formulas', category:'Exam', price:'₹59', pdf:'https://www.tutorialspoint.com/aptitude/pdf/aptitude_tutorial.pdf' },
+  { title:'DBMS Notes', desc:'ERD & SQL basics', category:'Exam', price:'₹69', pdf:'https://www.tutorialspoint.com/dbms/pdf/dbms_tutorial.pdf' },
+  { title:'Software Engineering', desc:'Models & diagrams', category:'Exam', price:'₹79', pdf:'https://www.tutorialspoint.com/software_engineering/pdf/software_engineering_tutorial.pdf' },
+  { title:'Computer Architecture', desc:'CPU & memory', category:'Exam', price:'₹69', pdf:'https://www.tutorialspoint.com/computer_architecture/pdf/computer_architecture_tutorial.pdf' },
+  { title:'Cloud Computing', desc:'Services & models', category:'Exam', price:'₹89', pdf:'https://www.tutorialspoint.com/cloud_computing/pdf/cloud_computing_tutorial.pdf' },
+  { title:'Machine Learning', desc:'Core concepts', category:'Exam', price:'₹99', pdf:'https://www.tutorialspoint.com/machine_learning_with_python/pdf/machine_learning_with_python_tutorial.pdf' },
+  { title:'Cyber Security', desc:'Threats & basics', category:'Exam', price:'₹79', pdf:'https://www.tutorialspoint.com/cyber_security/pdf/cyber_security_tutorial.pdf' },
+  { title:'Computer Graphics', desc:'Core algorithms', category:'Exam', price:'₹69', pdf:'https://www.tutorialspoint.com/computer_graphics/pdf/computer_graphics_tutorial.pdf' },
+  { title:'Advanced OS', desc:'Scheduling & deadlock', category:'Exam', price:'₹79', pdf:'https://www.tutorialspoint.com/operating_system/pdf/operating_system_advanced.pdf' }
+];
+
+function svgThumb(title) {
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'>
+    <rect width='100%' height='100%' fill='#fff'/>
+    <text x='40' y='80' font-family='Poppins' font-size='28' fill='#6a11cb' font-weight='bold'>${title}</text>
+    <text x='40' y='120' font-family='Poppins' font-size='16' fill='#555'>Sample Preview Page</text>
+  </svg>`;
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+}
+
+function escapeHTML(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+const store = document.getElementById('store');
+
+function renderNotes(filter='all') {
+  store.innerHTML = '';
+  notes.filter(n => filter==='all' || n.category===filter).forEach((n, idx) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const thumb = svgThumb(n.title);
+    card.innerHTML = `
+      <div class="thumb"><img src="${thumb}" alt="${escapeHTML(n.title)}"></div>
+      <div class="title">${escapeHTML(n.title)}</div>
+      <div class="desc">${escapeHTML(n.desc)}</div>
+      <div class="card-row">
+        <button class="btn view" data-idx="${idx}">View Sample</button>
+        <button class="btn price">${n.price}</button>
+      </div>
+    `;
+    store.appendChild(card);
+  });
+}
+renderNotes();
+
+/* Category filter */
+document.getElementById('category').addEventListener('change', e => {
+  renderNotes(e.target.value);
+});
+
+/* Popup preview */
+const overlay = document.getElementById('overlay');
+const previewTitle = document.getElementById('previewTitle');
+const pdfFrameWrap = document.getElementById('pdfFrameWrap');
+const closeBtn = document.getElementById('closeBtn');
+
+store.addEventListener('click', (ev) => {
+  const btn = ev.target.closest('.view');
+  if(!btn) return;
+  const idx = parseInt(btn.dataset.idx,10);
+  openPreview(idx);
+});
+
+function openPreview(idx){
+  const note = notes[idx];
+  previewTitle.textContent = note.title + ' — Sample';
+  pdfFrameWrap.innerHTML = '';
+  const iframe = document.createElement('iframe');
+  let src = note.pdf;
+  if(src.toLowerCase().endsWith('.pdf')) src = src + '#page=1';
+  iframe.src = src;
+  iframe.loading = 'lazy';
+  pdfFrameWrap.appendChild(iframe);
+  overlay.classList.add('show');
+}
+
+closeBtn.addEventListener('click', () => overlay.classList.remove('show'));
+overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.classList.remove('show'); });
+</script>
+</body>
+</html>

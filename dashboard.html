@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard | VibyNotes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background: #f7f9ff;
+      font-family: "Poppins", sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      border-top: 4px solid #3498db;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 40px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+    }
+    .navbar .brand h1 {
+      margin: 0;
+      color: #3498db;
+      font-family: 'Dancing Script', cursive;
+    }
+    .navbar .tagline {
+      font-size: 1rem;
+      margin: 0;
+      color: #555;
+      font-style: italic;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 4px;
+    }
+
+    /* Dashboard */
+    .dashboard-container {
+      padding: 60px 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .welcome-card {
+      background: linear-gradient(135deg, #74b9ff, #3498db);
+      color: white;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .dashboard-section {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    .dashboard-section h3 {
+      border-left: 5px solid #3498db;
+      padding-left: 10px;
+      margin-bottom: 25px;
+      color: #2d3436;
+    }
+
+    .book-card {
+      border: none;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(52, 152, 219, 0.2);
+    }
+    .book-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .book-card .card-body {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .footer {
+      background: #3498db;
+      text-align: center;
+      color: white;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="brand">
+      <h1>VibyNotes</h1>
+      <p class="tagline">Your Study Partner ✨</p>
+    </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="blog.html">Blogs</a>
+      <a href="store.html">Notes</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- Dashboard -->
+  <div class="container dashboard-container">
+
+    <div class="welcome-card"><h2>Welcome back<span id="username"></span> 🌸</h2>
+
+      <p>Your personal space to access your ebooks and notes anytime.</p>
+    </div>
+
+    <!-- Purchased Notes -->
+    <div class="dashboard-section">
+      <h3>📘 Purchased Notes</h3>
+      <div class="row g-4">
+
+        <!-- 8 Sample Purchased Notes -->
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP._Lm_T3scKhVEVFC54gcRxwHaE8?w=229&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Java Notes">
+            <div class="card-body">
+              <h6>Java Handwritten Notes</h6>
+              <a href="notes/java.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP.SyZ8leHjxjQzeuVUCE4tXgHaD4?w=282&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="C Programming Notes">
+            <div class="card-body">
+              <h6>C Programming Notes</h6>
+              <a href="notes/c.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP.ESI8yNjrnY_K0VRAb6ywswHaEc?w=277&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="DBMS Notes">
+            <div class="card-body">
+              <h6>DBMS Notes</h6>
+              <a href="notes/dbms.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP.dTlIXedx_RmQRklIk9UJkQHaE-?w=264&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Operating System Notes">
+            <div class="card-body">
+              <h6>Operating System Notes</h6>
+              <a href="notes/os.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP.KgduoUF1XgHrjBnLezDVYQHaEw?w=301&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Networking Notes">
+            <div class="card-body">
+              <h6>Computer Networks Notes</h6>
+              <a href="notes/networking.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="data:image/webp;base64,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" alt="Python Notes">
+            <div class="card-body">
+              <h6>Python Notes</h6>
+              <a href="notes/python.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP.FpGXsH6g7QK_XYUc1yqmbQHaFa?w=216&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="HTML Notes">
+            <div class="card-body">
+              <h6>HTML & CSS Notes</h6>
+              <a href="notes/html.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP.ix4pSASG2yCp66H_aYtTRQHaFy?w=225&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="JavaScript Notes">
+            <div class="card-body">
+              <h6>JavaScript Notes</h6>
+              <a href="notes/js.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Open</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wishlist -->
+    <div class="dashboard-section">
+      <h3>💖 Wishlist</h3>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://pluspng.com/img-png/react-logo-png-react-js-logo-history-design-history-and-evolution-5500x3094.png" alt="React Notes">
+            <div class="card-body">
+              <h6>React Notes</h6>
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card book-card">
+            <img src="https://th.bing.com/th/id/OIP.l1Fs266QGwLJgyfWd2GZHAHaDe?w=319&h=164&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="SQL Notes">
+            <div class="card-body">
+              <h6>SQL Notes</h6>
+              <button class="btn btn-primary btn-sm">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2025 VibyNotes | All Rights Reserved 🌸
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    
+  // Get current user from localStorage
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const username = localStorage.getItem('vibyUser');
+  const userDisplayName = document.getElementById('username');
+
+  if (currentUser && currentUser.name) {
+    userDisplayName.textContent = currentUser.name;
+  } else if (username) {
+    userDisplayName.textContent = username;
+  } else {
+    userDisplayName.textContent = "Guest";
+  }
+
+  // Optional: show username in navbar corner (like on contact.html)
+  const userDisplay = document.createElement('span');
+  userDisplay.id = "userDisplay";
+  userDisplay.style.fontWeight = "600";
+  userDisplay.style.color = "#217dbb";
+  userDisplay.textContent = `👋 ${userDisplayName.textContent}`;
+  document.querySelector('.navbar').appendChild(userDisplay);
+</script>
+</body>
+</html>

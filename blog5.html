@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Value Your Time | Vibynotes</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;color:#222;min-height:100vh;background:linear-gradient(120deg,#fff8e1 0%,#f3e5f5 50%,#e0f7fa 100%);background-size:400% 400%;animation:bgshift 10s ease infinite}
+  @keyframes bgshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#fff;border-bottom:4px solid #ff8a65;position:sticky;top:0;z-index:50}
+  .brand{font-family:"Brush Script MT",cursive;color:#ff8a65;font-size:26px}
+  nav a{text-decoration:none;color:#333;font-weight:500}
+  .tagline{text-align:center;margin:18px 0;font-style:italic;color:#444}
+  .container{max-width:900px;margin:30px auto;background:rgba(255,255,255,0.95);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+  .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .hero img{width:220px;height:140px;object-fit:cover;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+  h1{color:#ff8a65;margin-bottom:6px}
+  .meta{color:#666;font-size:14px;margin-bottom:16px}
+  .lang-buttons{display:flex;gap:10px;margin:12px 0 18px}
+  .lang-buttons button{padding:8px 16px;border-radius:20px;border:none;background:#fff1ea;cursor:pointer;font-weight:600}
+  .lang-buttons button.active{background:#ff8a65;color:#fff}
+  .content{line-height:1.8;color:#333;font-size:16px;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  footer{text-align:center;padding:20px;margin-top:26px;background:#fff;border-top:2px solid #ff8a65}
+  .icons{display:flex;justify-content:center;gap:18px;margin-bottom:8px}
+  .icons img{width:26px;height:26px;filter:grayscale(1)}
+  .icons img:hover{filter:none}
+</style>
+</head>
+<body>
+  <nav>
+    <div><div class="brand">Vibynotes</div><div style="font-size:12px;color:#666">Your Study Partner ✨</div></div>
+     <ul style="display:flex;gap:18px;list-style:none"><li><a href="home.html">Home</a></li><li><a href="blog.html" style="color:#7b1fa2;font-weight:600">Blogs</a></li><li><a href="store.html">Notes</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About</a></li></ul>
+  </nav>
+
+  <div class="tagline">"Your Study Partner for Every Step of Learning"</div>
+
+  <main class="container">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=900" alt="Time">
+      <div style="flex:1">
+        <h1>Value Your Time</h1>
+        <div class="meta">By Vibynotes • Oct 27, 2025</div>
+
+        <div class="lang-buttons">
+          <button class="active" onclick="show('english', this)">English</button>
+          <button onclick="show('hindi', this)">हिन्दी</button>
+          <button onclick="show('hinglish', this)">Hinglish</button>
+        </div>
+      </div>
+    </div>
+
+    <article id="english" class="content">
+      <p>Time is the one resource you cannot replenish. Students who treat time with respect — by planning, prioritizing, and protecting focused hours — tend to make steady progress. Teachers who value time design lessons to maximize learning in limited minutes.</p>
+
+      <p>Practical steps: create a weekly plan, group similar tasks together (batching), block distraction-free study windows, and practice saying “not now” to low-value activities. Use small pockets of time effectively — a 20-minute revision can be more impactful than two hours of passive scrolling.</p>
+
+      <p>Respect your time and others’ time; it becomes the foundation of a productive life.</p>
+    </article>
+
+    <article id="hindi" class="content" style="display:none">
+      <p>समय एक ऐसा संसाधन है जिसे दोबारा नहीं पाया जा सकता। जो विद्यार्थी समय का सम्मान करते हैं — योजना बनाकर, प्राथमिकता तय करके और ध्यान से पढ़कर — वे लगातार आगे बढ़ते हैं। शिक्षक जो समय का मूल्य समझते हैं, वे कम समय में भी बहुत सिखा पाते हैं।</p>
+
+      <p>व्यावहारिक कदम: साप्ताहिक योजना बनाइए, समान कार्यों को एक साथ कीजिए (batching), distraction-free study windows बनाइए, और अनावश्यक चीजों के लिए "नहीं" कहना सीखिए।</p>
+
+      <p>समय का सम्मान करें — यही सफल जीवन की नींव है।</p>
+    </article>
+
+    <article id="hinglish" class="content" style="display:none">
+      <p>Time waisa resource hai jo recycle nahi hota. Jo students time ko priority dete hain — plan karte hain aur focused blocks rakhte hain — woh long-term me farak laate hain. Teachers agar class time ko value karein to students ki learning bhi efficient hoti hai.</p>
+
+      <p>Tips: weekly plan banao, similar tasks ko batch karo, distraction-free study windows set karo, aur social media ko scheduled breaks tak limit rakho. 20 minute focused revision bahut productive ho sakta hai.</p>
+
+      <p>Time ka respect karo — yahi aapko consistency aur results dilata hai.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="yt"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="tg"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="ig"></a>
+    </div>
+    <small>© 2025 Vibynotes — Your Study Partner</small>
+  </footer>
+
+<script>
+function show(id, btn){
+  document.querySelectorAll('#english,#hindi,#hinglish').forEach(el=>el.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.lang-buttons button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

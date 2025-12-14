@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Focus: The Silent Superpower | Vibynotes</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',sans-serif;color:#222;min-height:100vh;
+    background:linear-gradient(120deg,#fff8e1 0%,#e8f5e9 50%,#e1f5fe 100%);
+    background-size:400% 400%;animation:bgshift 11s ease infinite}
+  @keyframes bgshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#fff;border-bottom:4px solid #009688;position:sticky;top:0;z-index:50}
+  .brand{font-family:"Brush Script MT",cursive;color:#009688;font-size:26px}
+  nav ul{display:flex;gap:20px;list-style:none}
+  nav a{text-decoration:none;color:#333;font-weight:500}
+  .tagline{text-align:center;margin:18px 0;font-style:italic;color:#444}
+  .container{max-width:900px;margin:30px auto;background:rgba(255,255,255,0.95);border-radius:16px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+  .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .hero img{width:220px;height:140px;object-fit:cover;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+  h1{color:#00796b;margin-bottom:6px}
+  .meta{color:#666;font-size:14px;margin-bottom:16px}
+  .lang-buttons{display:flex;gap:10px;margin:12px 0 18px}
+  .lang-buttons button{padding:8px 16px;border-radius:20px;border:none;background:#e8f5f0;cursor:pointer;font-weight:600}
+  .lang-buttons button.active{background:#00796b;color:#fff}
+  .content{line-height:1.8;color:#333;font-size:16px;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  footer{text-align:center;padding:20px;margin-top:26px;background:#fff;border-top:2px solid #009688}
+  .icons{display:flex;justify-content:center;gap:18px;margin-bottom:8px}
+  .icons img{width:26px;height:26px;filter:grayscale(1)}
+  .icons img:hover{filter:none}
+</style>
+</head>
+<body>
+  <nav>
+    <div><div class="brand">Vibynotes</div><div style="font-size:12px;color:#666">Your Study Partner ✨</div></div>
+     <ul style="display:flex;gap:18px;list-style:none"><li><a href="home.html">Home</a></li><li><a href="blog.html" style="color:#7b1fa2;font-weight:600">Blogs</a></li><li><a href="store.html">Notes</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About</a></li></ul>
+  </nav>
+
+  <div class="tagline">"Your Study Partner for Every Step of Learning"</div>
+
+  <main class="container">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=900" alt="Focus">
+      <div style="flex:1">
+        <h1>Focus: The Silent Superpower</h1>
+        <div class="meta">By Vibynotes • Oct 27, 2025</div>
+        <div class="lang-buttons">
+          <button class="active" onclick="show('english', this)">English</button>
+          <button onclick="show('hindi', this)">हिन्दी</button>
+          <button onclick="show('hinglish', this)">Hinglish</button>
+        </div>
+      </div>
+    </div>
+
+    <article id="english" class="content">
+      <p>Focus is one of the rare skills that separates doing a lot from doing what matters. For students, focus converts study time into learning time. For teachers, focused lesson design converts busy classrooms into meaningful learning experiences.</p>
+
+      <p>Practical ways to build focus: eliminate distractions for short bursts (the Pomodoro method), set clear micro-goals for each session, and practice slowing down to read deeply. Start by training your attention for 15–25 minutes a day, then gradually increase. Results compound.</p>
+
+      <p>Remember: focus is a muscle. It grows when used deliberately. Protect your attention like the valuable resource it is — your future self will thank you.</p>
+    </article>
+
+    <article id="hindi" class="content" style="display:none">
+      <p>ध्यान (Focus) एक अनमोल कौशल है जो केवल मेहनत को सही दिशा देता है। विद्यार्थी के लिए ध्यान पढ़ाई के समय को वास्तविक सीखने में बदल देता है। शिक्षक के लिए यह कक्षा को व्यवस्थित और प्रभावी बनाता है।</p>
+
+      <p>ध्यान बढ़ाने के उपाय: छोटे-छोटे वक्त के लिए विकर्षण हटाएँ (Pomodoro), हर सत्र के लिए स्पष्ट लक्ष्य बनाएं, और गहराई से पढ़ने का अभ्यास करें। पहले 15–25 मिनट ध्यान दें, फिर धीरे-धीरे बढ़ाएँ।</p>
+
+      <p>ध्यान एक माँसपेशी की तरह है — जितना अभ्यास करेंगे उतना मजबूत होगा। अपनी ध्यान शक्ति को महत्व दें।</p>
+    </article>
+
+    <article id="hinglish" class="content" style="display:none">
+      <p>Focus ek aisi skill hai jo aapko waste time se bachati hai aur important cheezon par aage badhati hai. Student ke liye focus ka matlab hai padhai efficient hona — sirf time spend nahi, real learning hona. Teacher ke liye focused teaching ka matlab students ki real understanding.</p>
+
+      <p>Tips: distractions hatao, Pomodoro try karo (25 min kaam + 5 min break), har session ka clear goal rakho. Dheere-dheere focus badhega — jaise gym me strength aati hai.</p>
+
+      <p>Attention ko value do — yahi aapka sabse bada asset hai.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="yt"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="tg"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="ig"></a>
+    </div>
+    <small>© 2025 Vibynotes — Your Study Partner</small>
+  </footer>
+
+<script>
+function show(id, btn){
+  document.querySelectorAll('#english,#hindi,#hinglish').forEach(el=>el.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.lang-buttons button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
